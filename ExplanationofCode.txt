@@ -34,5 +34,3 @@ Release the video capture and destroy all windows using video.release() and cv2.
 
 Note that there is a commented line # cnt.led(total) which suggests that this code may be part of a larger project that communicates with an Arduino board to control an LED display based on the number of fingers raised.
 
-Explanation 1--->https://www.youtube.com/watch?v=ZBtk3GmJMTE&t=146s
-Explanation 2---->https://youtu.be/fwMjVZhM08s
