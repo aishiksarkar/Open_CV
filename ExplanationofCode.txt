@@ -1,0 +1,38 @@
+This Python code uses computer vision to detect the number of fingers raised in front of a camera, and displays a message based on the number of fingers detected.
+
+Here is an overview of the code:
+
+Import necessary libraries: cv2 for OpenCV (an open source computer vision and machine learning software library), mediapipe for hand tracking and gesture recognition, and time for delaying the execution of the code.
+
+Define a list of finger tip ids, which correspond to the landmarks returned by the mp_hand module from mediapipe.
+
+Open the camera using cv2.VideoCapture(), with the argument 0 representing the default camera.
+
+Inside a with block, initialize the mp_hand module from mediapipe and set the minimum detection and tracking confidence levels.
+
+Start a loop that captures frames from the camera and processes them to detect hand landmarks and count the number of fingers raised.
+
+Read a frame from the video capture using video.read(), and convert the color space from BGR to RGB using cv2.cvtColor().
+
+Call hands.process() on the RGB image to detect hand landmarks and store the results.
+
+Convert the RGB image back to BGR color space using cv2.cvtColor().
+
+Iterate through the detected hand landmarks and extract the (x,y) coordinates for each landmark. Store the coordinates in lmList.
+
+Using the finger tip ids from step 2, check if each finger is raised or not by comparing the y-coordinates of the corresponding landmarks. Append the results to fingers.
+
+Count the number of fingers raised by calling fingers.count(1).
+
+Display a message on the screen based on the number of fingers raised using cv2.rectangle() and cv2.putText(). The messages correspond to different meanings based on the number of fingers raised.
+
+Use cv2.imshow() to display the processed image.
+
+Wait for a key press using cv2.waitKey(1). If the key pressed is 'q', exit the loop.
+
+Release the video capture and destroy all windows using video.release() and cv2.destroyAllWindows().
+
+Note that there is a commented line # cnt.led(total) which suggests that this code may be part of a larger project that communicates with an Arduino board to control an LED display based on the number of fingers raised.
+
+Explanation 1--->https://www.youtube.com/watch?v=ZBtk3GmJMTE&t=146s
+Explanation 2---->https://youtu.be/fwMjVZhM08s

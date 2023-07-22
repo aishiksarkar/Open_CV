@@ -1,0 +1,17 @@
+This is a Python script that uses computer vision to recognize hand gestures and displays a message on the screen based on the number of fingers detected. It uses the OpenCV and Mediapipe libraries.
+
+Here is a brief explanation of the code:
+
+The necessary libraries are imported: cv2 (OpenCV), mediapipe, and time.
+A delay of 2 seconds is introduced using the time.sleep() function to allow the camera to start up before the script begins.
+The mediapipe library is used to detect hand landmarks in the video feed from the camera. The tipIds variable is set to a list of finger tip landmark IDs.
+The video feed is opened using cv2.VideoCapture().
+A while loop is set up to continuously read frames from the video and process them using the mediapipe library.
+Within the while loop, the image is read from the video feed and converted to RGB color space using cv2.cvtColor().
+The image is then processed by the mediapipe library to detect hand landmarks. The results are stored in the 'results' variable.
+If hand landmarks are detected in the image, the x,y coordinates of the landmarks are extracted and stored in the lmList variable.
+The number of fingers detected is then determined based on the position of the finger tip landmarks relative to other landmarks on the hand.
+A message is displayed on the screen based on the number of fingers detected. The message is displayed using cv2.putText() and cv2.rectangle() functions.
+The processed image is displayed using cv2.imshow().
+The loop continues until the user presses the 'q' key to quit.
+The video feed is released and all windows are closed using cv2.destroyAllWindows().
